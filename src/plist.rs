@@ -1,9 +1,11 @@
 use std::fs::*;
 use std::io::prelude::*;
-
+use error::*;
 use rand;
 use rand::Rng;
-pub fn create_info_plist(name: &str) -> bool{
+
+
+pub fn create_info_plist(name: &str) -> Result<(),VstBundlerError>{
     let mut rng = rand::thread_rng();
     let plist_contents = format!(r##"
     <?xml version="1.0" encoding="UTF-8"?>
@@ -47,8 +49,8 @@ pub fn create_info_plist(name: &str) -> bool{
     </plist>"##,name,name,name,rng.gen::<u16>()%9999u16);
     if let Ok(mut f) = File::create(format!("{}/Contents/Info.plist",name)) {
         let _ = f.write(plist_contents.as_bytes()).unwrap();
-        true
+        Ok(())
     } else {
-        false
+        Err(VstBundlerError::PlistCreateFailure)
     }
 }

@@ -6,3 +6,4 @@ authors = ["Alex Zywicki <alexander.zywicki@gmail.com>"]
 [dependencies]
 clap = "*"
 rand="*"
+fs_extra="*"
