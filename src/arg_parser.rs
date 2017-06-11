@@ -3,7 +3,7 @@ pub fn create_arg_parser() -> ArgMatches<'static> {
     App::new("VST-Bundler")
         .version("0.1.0")
         .author("Alex Z. <alexander.zywicki@gmail.com>")
-        .about("Bundles VST Plugins")
+        .about("Bundles VST Plugins For Use On OS X")
         .arg(Arg::with_name("name")
                  .short("n")
                  .long("name")

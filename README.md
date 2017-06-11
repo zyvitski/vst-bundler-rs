@@ -1,6 +1,6 @@
 # VST-Bundler 0.1.0 
 
-### Bundles VST Plugins
+### Bundles VST Plugins For Use On OS X
 
 ##### USAGE:     
 
